@@ -1,0 +1,39 @@
+package Questoes4;
+
+public class Nodo {
+	private Nodo proximo,anterior=null;
+	private String cidade;
+	
+	
+	
+	
+	@Override
+	public String toString() {
+		return "Nodo [cidade=" + cidade + "]";
+	}
+	public void setCidade(String cidade) {
+		this.cidade = cidade;
+	}
+	
+	
+	public Nodo getProximo() {
+		return proximo;
+	}
+	public void setProximo(Nodo proximo) {
+		this.proximo = proximo;
+	}
+	public Nodo getAnterior() {
+		return anterior;
+	}
+	public void setAnterior(Nodo anterior) {
+		this.anterior = anterior;
+	}
+	public String getCidade() {
+		return cidade;
+	}
+	
+	
+	
+	
+	
+}

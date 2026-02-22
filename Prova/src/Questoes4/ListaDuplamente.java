@@ -1,0 +1,54 @@
+package Questoes4;
+
+public class ListaDuplamente {
+	private Nodo inicio, fim;
+	private int n;// tamanho
+
+	public int getN() {
+		return n;
+	}
+
+	public ListaDuplamente() {
+		this.inicio = null;
+		this.fim = null;
+
+	}
+
+	public void InserirFim(String cidade) {
+		Nodo aux = new Nodo();
+		aux.setCidade(cidade);
+		if (n == 0) {
+			inicio = aux;
+			fim = aux;
+		} else {
+			fim.proximo = aux;
+
+            aux.anterior = fim;
+
+            fim = aux;
+		}
+		n++;
+	}
+
+	public void exibirDireita() {
+
+		Nodo atual = inicio;
+        while (atual!=null) {
+            System.out.print(atual.getCidade() + " ");
+            atual=atual.getProximo();
+            
+        }
+
+	}
+
+	public void exibirInversa() {
+		Nodo atual = fim;
+		while (atual != null) {
+			System.out.print(atual.getCidade() + " ");
+			atual = atual.getAnterior();
+		}
+		System.out.println();
+
+	}
+
+}

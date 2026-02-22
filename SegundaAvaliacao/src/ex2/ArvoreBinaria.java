@@ -1,0 +1,87 @@
+package ex2;
+
+public class ArvoreBinaria {
+	private No raiz;
+
+	public ArvoreBinaria() {
+		this.raiz = null;
+	}
+
+	public boolean raizVazia() {
+		if (this.raiz == null) {
+			return true;
+		}
+		return false;
+	}
+
+	public void inserirElemento(int numero) {
+		No aux = new No(numero);
+		if (raizVazia()) {
+			this.raiz = aux;
+			System.out.println("raiz inserida");
+			return;
+		}
+		inserirLado(this.raiz, aux);
+	}
+
+	private void inserirLado(No atual, No novo) {
+		if (novo.getValor() < atual.getValor()) {
+			if (atual.getEsq() == null) {
+				atual.setEsq(novo);
+			} else {
+				inserirLado(atual.getEsq(), novo);
+			}
+
+		} else {
+			if (atual.getDir() == null) {
+				atual.setDir(novo);
+			} else {
+				inserirLado(atual.getDir(), novo);
+			}
+		}
+	}
+
+	public void buscar(int valor) {
+		No aux = new No(valor);
+		busca(this.raiz, aux);
+	}
+
+	private void busca(No atual, No novo) {
+
+		if (atual == null) {
+	        System.out.println("Elemento não encontrado");
+	        return;
+	    }
+
+	    if (novo.getValor() == atual.getValor()) {
+	        System.out.println("Elemento encontrado!");
+	        return;
+	    }
+
+	    if (novo.getValor() < atual.getValor()) {
+	        busca(atual.getEsq(), novo); 
+	    } else {
+	        busca(atual.getDir(), novo); 
+	    }
+	}
+
+	public void mostrarPreOrdem() {
+		if (raiz == null) {
+			System.out.println("Árvore vazia!");
+			return;
+		}
+
+		System.out.println(raiz.getValor());
+		preOrdem(raiz);
+		System.out.println();
+	}
+
+	private void preOrdem(No atual) {
+		if (atual != null) {
+			System.out.print(atual.getValor() + " ");
+			preOrdem(atual.getEsq());
+			preOrdem(atual.getDir());
+		}
+	}
+
+}

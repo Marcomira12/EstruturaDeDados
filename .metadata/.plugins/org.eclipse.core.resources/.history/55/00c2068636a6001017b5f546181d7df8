@@ -1,0 +1,18 @@
+package Questoes4;
+
+public class TesteDupla {
+
+	public static void main(String[] args) {
+		ListaDuplamente lista=new ListaDuplamente();
+		TesteDupla teste= new TesteDupla();
+
+	}
+	public void add(ListaDuplamente lista) {
+		Nodo c1= new Nodo("Salvador");
+		Nodo c2= new Nodo("Lauro de freitas");
+		Nodo c3= new Nodo("Ilheus");
+		
+		lista.InserirFim();
+	}
+	
+}

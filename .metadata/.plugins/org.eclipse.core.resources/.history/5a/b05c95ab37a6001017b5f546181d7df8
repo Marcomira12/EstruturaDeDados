@@ -1,0 +1,25 @@
+package Questoes4;
+
+public class TesteDupla {
+
+	public static void main(String[] args) {
+		ListaDuplamente lista=new ListaDuplamente();
+		TesteDupla teste= new TesteDupla();
+		teste.add(lista);
+		lista.exibirDireita();
+		System.out.println();
+		lista.exibirInversa();
+		System.out.println(lista.getN());
+		
+
+	}
+	public void add(ListaDuplamente lista) {
+		
+		
+		lista.InserirFim("Salvador");
+		lista.InserirFim("Lauro de freitas");
+		lista.InserirFim("Catu");
+		lista.InserirFim("Ilheus");
+	}
+	
+}

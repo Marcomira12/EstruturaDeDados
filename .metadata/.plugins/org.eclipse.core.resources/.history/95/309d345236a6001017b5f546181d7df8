@@ -1,0 +1,13 @@
+package Questoes4;
+
+public class ListaDuplamente {
+	private Nodo inicio,fim;
+	
+	public ListaDuplamente() {
+        this.inicio = null;
+        this.fim = null;
+
+    }
+
+	
+}
